@@ -48,6 +48,14 @@
     border-bottom: 2px solid var(--brass);
     padding-bottom: 2px;
   }
+  header nav { display: flex; align-items: center; gap: 28px; }
+  header nav a.nav-link {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+  header nav a.nav-link:hover { color: var(--navy); }
 
   /* Hero */
   .hero {
@@ -216,7 +224,10 @@
     </svg>
     <span class="brand-name">Six Percent Saved</span>
   </div>
-  <a class="call" href="tel:3143999898">(314) 399-9898</a>
+  <nav>
+    <a class="nav-link" href="not-living-there.html">Selling a house you don't live in</a>
+    <a class="call" href="tel:3143999898">(314) 399-9898</a>
+  </nav>
 </header>
 
 <section class="hero" style="border-top: none; padding-top: 8px;">

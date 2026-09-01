@@ -128,6 +128,25 @@
     padding-bottom: 2px;
   }
 
+  .step-icon { margin-bottom: 10px; }
+  .step-icon svg { width: 56px; height: 56px; }
+
+  .meet-grid { display: grid; grid-template-columns: 180px 1fr; gap: 32px; align-items: start; }
+  .headshot-placeholder {
+    width: 180px;
+    height: 180px;
+    border-radius: 6px;
+    background: var(--paper);
+    border: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #8a8477;
+    font-size: 13px;
+    padding: 12px;
+  }
+
   /* Sections */
   section { padding: 56px 0; border-top: 1px solid var(--line); }
   section .wrap { display: grid; gap: 24px; }
@@ -231,7 +250,7 @@
   footer a { color: var(--navy); }
 
   @media (max-width: 720px) {
-    .steps, .avoid-list, .why-grid, .field-row { grid-template-columns: 1fr; }
+    .steps, .avoid-list, .why-grid, .field-row, .meet-grid { grid-template-columns: 1fr; }
     header { flex-direction: column; gap: 14px; text-align: center; }
   }
 </style>
@@ -275,22 +294,47 @@
 <section>
   <div class="wrap">
     <h2>How it works</h2>
-    <p class="lead">Three steps. No open houses, no financing that falls through three weeks in.</p>
+    <p class="lead">Three steps, and you're talking to me the whole way — not a call center, not a rotating rep.</p>
     <div class="steps">
       <div class="step">
+        <div class="step-icon">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" fill="var(--paper)" stroke="var(--line)"/>
+            <circle cx="24" cy="26" r="8" fill="none" stroke="var(--navy)" stroke-width="3"/>
+            <path d="M12 46c2-8 8-12 12-12s10 4 12 12" fill="none" stroke="var(--navy)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M40 20a9 9 0 0 1 10 10c0 5-4 7-4 11" fill="none" stroke="var(--brass-dark)" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="46" cy="46" r="2.2" fill="var(--brass-dark)"/>
+          </svg>
+        </div>
         <div class="num">One</div>
-        <h3>Tell us about the house</h3>
-        <p>Fill out the form below or call. A few minutes, no obligation.</p>
+        <h3>Call or fill out the form</h3>
+        <p>You'll reach me directly — Phil. A few minutes, no obligation.</p>
       </div>
       <div class="step">
+        <div class="step-icon">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" fill="var(--paper)" stroke="var(--line)"/>
+            <path d="M14 40l8-16h20l8 16" fill="none" stroke="var(--navy)" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M22 40v6h20v-6" fill="none" stroke="var(--navy)" stroke-width="3"/>
+            <path d="M22 30l5 5 9-9" fill="none" stroke="var(--green)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div class="num">Two</div>
-        <h3>Walkthrough and a real offer</h3>
-        <p>We see the property and give you a number — one that doesn't get renegotiated after inspection.</p>
+        <h3>I walk the property myself</h3>
+        <p>I come see it in person and hand you a number — one that doesn't get renegotiated after inspection.</p>
       </div>
       <div class="step">
+        <div class="step-icon">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" fill="var(--paper)" stroke="var(--line)"/>
+            <rect x="16" y="24" width="32" height="20" rx="2" fill="none" stroke="var(--navy)" stroke-width="3"/>
+            <path d="M20 30h14M20 36h10" stroke="var(--navy)" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M38 38l6 6M44 38l-6 6" stroke="var(--brass-dark)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div class="num">Three</div>
-        <h3>Close on your date</h3>
-        <p>Typically within 14 days of signing, or later if you need the time. You pick it.</p>
+        <h3>I'm at the table when we close</h3>
+        <p>Typically within 14 days of signing, or later if you need the time. You pick it — and I'll be there.</p>
       </div>
     </div>
   </div>
@@ -312,6 +356,19 @@
 </section>
 
 <section>
+  <div class="wrap">
+    <h2>Meet Phil</h2>
+    <div class="meet-grid">
+      <div class="headshot-placeholder">Photo coming soon</div>
+      <div>
+        <p>I'm Phil Castaneda, and Six Percent Saved is mine — not a franchise, not a call center. When you reach out, you're reaching me. I answer the phone, I come out for the walkthrough myself, I'm the one who hands you the offer, and I'm at the table on closing day. Same person, start to finish.</p>
+        <p>I also own Cast Contracting, a general contracting company here in the St. Louis area. That's not a side note — it's why my numbers hold up. My own crew does the repair work, so I'm not guessing at what a house needs and padding my offer to cover the unknown. I know, because I'll be the one fixing it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap why-grid">
     <div>
       <h2>Why Six Percent Saved</h2>
@@ -322,6 +379,7 @@
     <div class="credential-box">
       <h3>What that means for you</h3>
       <ul>
+        <li>You deal with me, start to finish — not a rotating rep</li>
         <li>A real, accurate offer the first time</li>
         <li>No surprise renegotiation after we look closer</li>
         <li>A local company, not a national call center</li>

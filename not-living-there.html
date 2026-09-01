@@ -124,6 +124,22 @@
     padding-bottom: 2px;
   }
 
+  .meet-grid { display: grid; grid-template-columns: 180px 1fr; gap: 32px; align-items: start; }
+  .headshot-placeholder {
+    width: 180px;
+    height: 180px;
+    border-radius: 6px;
+    background: var(--paper);
+    border: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #8a8477;
+    font-size: 13px;
+    padding: 12px;
+  }
+
   section { padding: 52px 0; border-top: 1px solid var(--line); }
   section .wrap { display: grid; gap: 22px; }
   h2 { font-family: var(--serif); font-size: 28px; color: var(--navy); }
@@ -186,7 +202,7 @@
   footer a { color: var(--navy); }
 
   @media (max-width: 720px) {
-    .situations, .field-row { grid-template-columns: 1fr; }
+    .situations, .field-row, .meet-grid { grid-template-columns: 1fr; }
     header { flex-direction: column; gap: 14px; text-align: center; }
     header nav { flex-direction: column; gap: 14px; }
   }
@@ -271,12 +287,25 @@
       <div class="relief-item"><span class="check">✓</span> No repairs to coordinate — we buy the house as-is, in whatever condition it's in</div>
       <div class="relief-item"><span class="check">✓</span> No showings to schedule or travel back for</div>
       <div class="relief-item"><span class="check">✓</span> No need to clear out the house first — leave what you don't want, we handle it</div>
-      <div class="relief-item"><span class="check">✓</span> One point of contact throughout, not a chain of agents and inspectors</div>
+      <div class="relief-item"><span class="check">✓</span> One point of contact throughout — me, Phil, not a chain of agents and inspectors</div>
       <div class="relief-item"><span class="check">✓</span> A closing date that works for you and your family, not a buyer's mortgage timeline</div>
       <div class="relief-item"><span class="check">✓</span> Our own crew (Cast Contracting) handles any work the house needs after closing — so our number doesn't move after a closer look</div>
     </div>
     <div class="note-box">
       This is often more about time and peace of mind than the highest possible price. If getting full retail value matters more to your family than speed and simplicity, listing traditionally may be the better fit — and we'll say so honestly if you ask us.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Meet Phil</h2>
+    <div class="meet-grid">
+      <div class="headshot-placeholder">Photo coming soon</div>
+      <div>
+        <p>I'm Phil Castaneda. When you're handling a house from out of town — or from across the same city while juggling everything else — the last thing you need is another stranger to coordinate with. So you won't have to. I answer the phone myself, I do the walkthrough in person, I'm the one who hands you the offer, and I'm at the table when we close, no matter where you're calling in from.</p>
+        <p>I also own Cast Contracting, a general contracting company here in the St. Louis area. My own crew does whatever work the house needs after closing, which is why I don't need to pad my number for unknowns the way a buyer without a crew does.</p>
+      </div>
     </div>
   </div>
 </section>

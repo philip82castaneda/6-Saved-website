@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9,500,0,0;9,600,0,0&family=Libre+Franklin:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
   :root {
     --navy: #164A43;
@@ -81,21 +82,12 @@
 
   .map-interactive { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; margin-top: 8px; align-items: stretch; }
 
-  .map-svg-wrap {
-    background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 16px;
-    display: flex; align-items: center; justify-content: center;
+  .map-leaflet-wrap {
+    border: 1px solid var(--line); border-radius: 6px; overflow: hidden; min-height: 420px;
   }
-  .map-svg-wrap svg { width: 100%; height: auto; max-height: 420px; }
-  .map-marker circle {
-    fill: var(--brass); stroke: var(--navy); stroke-width: 2; cursor: pointer;
-    transition: fill 0.15s ease, r 0.15s ease;
-  }
-  .map-marker text {
-    font-family: var(--sans); font-size: 13px; font-weight: 600; fill: var(--navy);
-    pointer-events: none;
-  }
-  .map-marker:hover circle, .map-marker:focus circle { fill: var(--navy-dark); r: 17; }
-  .map-marker.selected circle { fill: var(--navy); r: 18; stroke: var(--brass); stroke-width: 3; }
+  #price-map { height: 420px; width: 100%; background: var(--paper); }
+  .leaflet-popup-content-wrapper { border-radius: 4px; font-family: var(--sans); }
+  .leaflet-popup-content { font-size: 13px; margin: 8px 12px; }
 
   .stats-panel {
     background: var(--navy); color: var(--paper); border-radius: 6px; padding: 28px;
@@ -176,48 +168,15 @@
 <section>
   <div class="wrap">
     <h2>Click an area to see what 6% costs there</h2>
-    <p class="lead">A simplified guide to the metro area — not to scale, but the geography and the numbers are real. Recent median sale prices reported by Redfin.</p>
+    <p class="lead">A real, interactive map of the metro area — pan, zoom, and click any pin. Recent median sale prices reported by Redfin.</p>
 
     <div class="map-interactive">
-      <div class="map-svg-wrap">
-        <svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive map of the St. Louis metro area">
-          <path d="M0,90 C90,60 140,80 180,130 C210,170 200,220 230,420 L0,420 Z" fill="var(--parchment)" stroke="var(--line)" stroke-width="2"/>
-          <path d="M180,130 C260,150 320,170 340,230 C360,290 330,360 300,420 L230,420 C200,220 210,170 180,130 Z" fill="#E4F2EA" stroke="var(--line)" stroke-width="2"/>
-          <path d="M300,420 C330,360 360,290 340,230 C400,240 440,300 460,420 Z" fill="var(--parchment)" stroke="var(--line)" stroke-width="2"/>
-          <path d="M340,0 C345,60 350,150 340,230 C360,290 380,360 400,420" fill="none" stroke="#BFD9EA" stroke-width="10" stroke-linecap="round"/>
-          <path d="M0,90 C60,70 120,90 180,130" fill="none" stroke="#BFD9EA" stroke-width="8" stroke-linecap="round"/>
-          <text x="20" y="60" font-family="var(--sans)" font-size="12" fill="var(--brass-dark)" font-weight="600">MISSOURI RIVER</text>
-          <text x="410" y="90" font-family="var(--sans)" font-size="12" fill="var(--brass-dark)" font-weight="600" transform="rotate(78 410 90)">MISSISSIPPI RIVER</text>
-
-          <g class="map-marker" data-area="ofallon" tabindex="0" role="button" aria-label="O'Fallon">
-            <circle cx="110" cy="120" r="14"/>
-            <text x="110" y="102" text-anchor="middle">O'Fallon</text>
-          </g>
-          <g class="map-marker" data-area="chesterfield" tabindex="0" role="button" aria-label="Chesterfield">
-            <circle cx="215" cy="215" r="14"/>
-            <text x="215" y="197" text-anchor="middle">Chesterfield</text>
-          </g>
-          <g class="map-marker" data-area="kirkwood" tabindex="0" role="button" aria-label="Kirkwood">
-            <circle cx="280" cy="310" r="14"/>
-            <text x="280" y="336" text-anchor="middle">Kirkwood</text>
-          </g>
-          <g class="map-marker" data-area="webster" tabindex="0" role="button" aria-label="Webster Groves">
-            <circle cx="330" cy="290" r="14"/>
-            <text x="330" y="270" text-anchor="middle">Webster Groves</text>
-          </g>
-          <g class="map-marker" data-area="city" tabindex="0" role="button" aria-label="St. Louis City">
-            <circle cx="365" cy="300" r="14"/>
-            <text x="400" y="304" text-anchor="start">St. Louis City</text>
-          </g>
-          <g class="map-marker" data-area="county" tabindex="0" role="button" aria-label="St. Louis County overall">
-            <circle cx="255" cy="380" r="14"/>
-            <text x="255" y="406" text-anchor="middle">St. Louis County</text>
-          </g>
-        </svg>
+      <div class="map-leaflet-wrap">
+        <div id="price-map"></div>
       </div>
 
       <div class="stats-panel" id="stats-panel">
-        <p class="prompt" id="stats-prompt">Click an area on the map to see its numbers.</p>
+        <p class="prompt" id="stats-prompt">Click a pin on the map to see its numbers.</p>
         <div id="stats-content" style="display: none;">
           <h3 id="stats-area-name"></h3>
           <div class="stat-row"><span>Median sale price</span><span class="stat-value" id="stats-price"></span></div>
@@ -317,15 +276,21 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
   const areaStats = {
-    county: { name: "St. Louis County", price: "~$312,000", commission: "~$18,700", source: "Redfin, 3-month period ending May 2026" },
-    city: { name: "St. Louis City", price: "~$261,000", commission: "~$15,700", source: "Redfin, June 2026" },
-    chesterfield: { name: "Chesterfield", price: "~$588,000", commission: "~$35,300", source: "Redfin, November 2025" },
-    webster: { name: "Webster Groves", price: "~$561,000", commission: "~$33,700", source: "Redfin, mid-2025" },
-    kirkwood: { name: "Kirkwood", price: "~$482,000", commission: "~$28,900", source: "Redfin, 3-month period ending June 2026" },
-    ofallon: { name: "O'Fallon", price: "~$374,000", commission: "~$22,400", source: "Redfin, early 2026" }
+    county: { name: "St. Louis County", price: "~$312,000", commission: "~$18,700", source: "Redfin, 3-month period ending May 2026", coords: [38.6631, -90.3238] },
+    city: { name: "St. Louis City", price: "~$261,000", commission: "~$15,700", source: "Redfin, June 2026", coords: [38.6270, -90.1994] },
+    chesterfield: { name: "Chesterfield", price: "~$588,000", commission: "~$35,300", source: "Redfin, November 2025", coords: [38.6631, -90.5771] },
+    webster: { name: "Webster Groves", price: "~$561,000", commission: "~$33,700", source: "Redfin, mid-2025", coords: [38.5875, -90.3568] },
+    kirkwood: { name: "Kirkwood", price: "~$482,000", commission: "~$28,900", source: "Redfin, 3-month period ending June 2026", coords: [38.5834, -90.4068] },
+    ofallon: { name: "O'Fallon", price: "~$374,000", commission: "~$22,400", source: "Redfin, early 2026", coords: [38.8106, -90.6998] },
+    ballwin: { name: "Ballwin", price: "~$409,700", commission: "~$24,600", source: "Redfin, June 2026", coords: [38.5950, -90.5468] },
+    ladue: { name: "Ladue", price: "~$1,300,000", commission: "~$78,000", source: "Redfin, April 2026", coords: [38.6478, -90.3629] },
+    maplewood: { name: "Maplewood", price: "~$314,800", commission: "~$18,900", source: "Redfin, June 2026", coords: [38.6103, -90.3179] }
   };
+
+  const markerRefs = {};
 
   function selectArea(id) {
     const data = areaStats[id];
@@ -336,17 +301,27 @@
     document.getElementById('stats-price').textContent = data.price;
     document.getElementById('stats-commission').textContent = data.commission;
     document.getElementById('stats-source').textContent = data.source;
-    document.querySelectorAll('.map-marker').forEach(function (m) {
-      m.classList.toggle('selected', m.getAttribute('data-area') === id);
+    Object.keys(markerRefs).forEach(function (key) {
+      markerRefs[key].setStyle(key === id
+        ? { fillColor: '#164A43', color: '#4C9A6E', weight: 3, radius: 11 }
+        : { fillColor: '#4C9A6E', color: '#164A43', weight: 2, radius: 9 });
     });
   }
 
-  document.querySelectorAll('.map-marker').forEach(function (marker) {
-    const id = marker.getAttribute('data-area');
-    marker.addEventListener('click', function () { selectArea(id); });
-    marker.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectArea(id); }
-    });
+  const priceMap = L.map('price-map').setView([38.66, -90.43], 10);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 18
+  }).addTo(priceMap);
+
+  Object.keys(areaStats).forEach(function (id) {
+    const data = areaStats[id];
+    const marker = L.circleMarker(data.coords, {
+      radius: 9, fillColor: '#4C9A6E', color: '#164A43', weight: 2, fillOpacity: 1
+    }).addTo(priceMap);
+    marker.bindTooltip(data.name, { direction: 'top', offset: [0, -8] });
+    marker.on('click', function () { selectArea(id); });
+    markerRefs[id] = marker;
   });
 </script>
 

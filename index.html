@@ -33,7 +33,6 @@
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-  /* Header */
   header {
     display: flex;
     align-items: center;
@@ -42,229 +41,186 @@
     max-width: 1080px;
     margin: 0 auto;
   }
-  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
   .brand-logo { height: 44px; width: auto; display: block; }
-  header .call {
-    font-family: var(--serif);
-    font-size: 17px;
-    color: var(--navy);
-    text-decoration: none;
-    border-bottom: 2px solid var(--brass);
-    padding-bottom: 2px;
-  }
   header nav { display: flex; align-items: center; gap: 28px; }
-  header nav a.nav-link {
-    font-family: var(--sans);
-    font-size: 15px;
-    color: var(--charcoal);
-    text-decoration: none;
-  }
+  header nav a.nav-link { font-family: var(--sans); font-size: 15px; color: var(--charcoal); text-decoration: none; }
   header nav a.nav-link:hover { color: var(--navy); }
-
-  /* Commission figure */
-  .commission-badge {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 14px;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 18px 26px;
-    width: fit-content;
-  }
-  .commission-figure {
-    font-family: var(--serif);
-    font-size: 64px;
-    font-weight: 700;
-    color: var(--green);
-    line-height: 1;
-  }
-  .commission-label {
-    font-family: var(--sans);
-    font-size: 15px;
-    color: var(--charcoal);
-    max-width: 16ch;
-    line-height: 1.3;
+  header .call {
+    font-family: var(--serif); font-size: 17px; color: var(--navy); text-decoration: none;
+    border-bottom: 2px solid var(--brass); padding-bottom: 2px;
   }
 
-  /* Hero */
+  /* HERO */
   .hero {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 40px 24px 64px;
-    display: grid;
-    gap: 28px;
-  }
-  .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(34px, 5vw, 52px);
-    line-height: 1.12;
-    color: var(--navy);
-    max-width: 14ch;
-  }
-  .hero p.lede {
-    font-size: 19px;
-    max-width: 46ch;
-    color: var(--charcoal);
-  }
-  .hero .actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-  .btn {
-    display: inline-block;
-    background: var(--navy);
+    position: relative;
+    background: var(--navy-dark);
     color: var(--paper);
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 16px;
-    padding: 14px 26px;
-    border-radius: 3px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
+    overflow: hidden;
   }
-  .btn:hover { background: var(--navy-dark); }
-  .btn-secondary {
-    color: var(--navy);
-    font-family: var(--serif);
-    font-size: 17px;
-    text-decoration: none;
-    border-bottom: 2px solid var(--brass);
-    padding-bottom: 2px;
+  .hero-photo {
+    width: 100%; min-height: 320px; max-height: 460px;
+    background: repeating-linear-gradient(135deg, #143d38, #143d38 12px, #0F332E 12px, #0F332E 24px);
+    border-bottom: 3px dashed rgba(255,255,255,0.25);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 24px;
   }
-
-  .step-icon { margin-bottom: 10px; }
-  .step-icon svg { width: 56px; height: 56px; }
-
-  .meet-grid { display: grid; grid-template-columns: 180px 1fr; gap: 32px; align-items: start; }
-  .headshot-placeholder {
-    width: 180px;
-    height: 180px;
-    border-radius: 6px;
-    background: var(--paper);
-    border: 1px dashed var(--line);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #8a8477;
-    font-size: 13px;
-    padding: 12px;
+  .hero-photo span {
+    font-family: var(--sans); font-size: 14px; color: rgba(255,255,255,0.65);
+    max-width: 32ch; line-height: 1.5;
   }
+  .hero-content { max-width: 1080px; margin: 0 auto; padding: 44px 24px 56px; }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(30px, 4.2vw, 44px); line-height: 1.18;
+    max-width: 18ch; margin-bottom: 14px; color: var(--paper);
+  }
+  .hero p.lede { font-size: 17px; max-width: 58ch; color: #CFE4DC; margin-bottom: 30px; }
 
-  /* Sections */
+  .address-capture {
+    background: var(--paper); border-radius: 8px; padding: 22px; max-width: 560px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  }
+  .address-capture label {
+    display: block; font-family: var(--sans); font-weight: 600; font-size: 14px;
+    color: var(--charcoal); margin-bottom: 8px;
+  }
+  .address-capture-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .address-capture input[type=text] {
+    flex: 1 1 260px; padding: 13px 14px; border: 1px solid var(--line); border-radius: 4px;
+    font-family: var(--sans); font-size: 15px; color: var(--charcoal);
+  }
+  .address-capture button {
+    background: var(--navy); color: var(--paper); font-family: var(--sans); font-weight: 600;
+    font-size: 15px; padding: 13px 22px; border: none; border-radius: 4px; cursor: pointer; white-space: nowrap;
+  }
+  .address-capture button:hover { background: var(--navy-dark); }
+  .address-capture .fine-print { font-size: 12.5px; color: #6b6459; margin-top: 10px; }
+
+  .hero-badge-row { display: flex; align-items: center; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+  .hero-badge {
+    display: inline-flex; align-items: baseline; gap: 10px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;
+    padding: 10px 16px;
+  }
+  .hero-badge .figure { font-family: var(--serif); font-size: 30px; font-weight: 700; color: var(--brass); line-height: 1; }
+  .hero-badge .label { font-size: 13px; color: #CFE4DC; max-width: 20ch; line-height: 1.3; }
+  .hero .call-secondary { color: #CFE4DC; font-family: var(--serif); font-size: 16px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 2px; }
+
+  /* SHARED */
   section { padding: 56px 0; border-top: 1px solid var(--line); }
   section .wrap { display: grid; gap: 24px; }
-  h2 {
-    font-family: var(--serif);
-    font-size: 30px;
-    color: var(--navy);
+  h2 { font-family: var(--serif); font-size: 30px; color: var(--navy); text-align: center; }
+  .section-sub { text-align: center; font-size: 16px; max-width: 60ch; margin: 0 auto; color: #3F5854; }
+
+  .btn {
+    display: inline-block; background: var(--navy); color: var(--paper);
+    font-family: var(--sans); font-weight: 600; font-size: 16px; padding: 14px 26px;
+    border-radius: 4px; text-decoration: none; border: none; cursor: pointer;
   }
-  .lead { font-size: 17px; max-width: 56ch; }
+  .btn:hover { background: var(--navy-dark); }
+  .btn-center { text-align: center; margin-top: 6px; }
 
-  /* How it works */
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 8px; }
-  .step { border-left: 3px solid var(--brass); padding-left: 18px; }
-  .step .num { font-family: var(--serif); font-size: 15px; color: var(--brass-dark); }
-  .step h3 { font-family: var(--serif); font-size: 20px; color: var(--navy); margin: 4px 0 8px; }
-  .step p { font-size: 15.5px; }
-
-  /* What you avoid */
-  .avoid-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; margin-top: 4px; }
-  .avoid-item { display: flex; gap: 10px; align-items: baseline; font-size: 16px; }
-  .avoid-item .mark { color: var(--brass-dark); font-family: var(--serif); font-size: 18px; }
-
-  /* Why him */
-  .why-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
-  .why-grid p { font-size: 16.5px; margin-bottom: 14px; }
-  .credential-box {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 3px;
-    padding: 24px;
+  /* HOW IT WORKS */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 12px; }
+  .step { text-align: center; }
+  .step-num {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--brass); color: var(--paper);
+    font-family: var(--serif); font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
   }
-  .credential-box h3 { font-family: var(--serif); font-size: 18px; color: var(--navy); margin-bottom: 10px; }
-  .credential-box ul { padding-left: 18px; font-size: 15px; }
-  .credential-box li { margin-bottom: 8px; }
+  .step h3 { font-family: var(--serif); font-size: 19px; color: var(--navy); margin-bottom: 8px; }
+  .step p { font-size: 15px; color: #3F5854; }
 
-  /* Proof placeholder */
+  /* DIFFERENT CARDS */
+  .diff-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 12px; }
+  .diff-card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 24px 20px; text-align: center; }
+  .diff-card .glyph { font-family: var(--serif); font-size: 26px; color: var(--brass); margin-bottom: 10px; }
+  .diff-card h3 { font-family: var(--serif); font-size: 17px; color: var(--navy); margin-bottom: 8px; }
+  .diff-card p { font-size: 14px; color: #3F5854; }
+
+  /* COMPARE TABLE */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
+  .compare-col { border-radius: 8px; padding: 26px; }
+  .compare-col.us { background: var(--navy); color: var(--paper); }
+  .compare-col.agent { background: var(--paper); border: 1px solid var(--line); color: var(--charcoal); }
+  .compare-col h3 { font-family: var(--serif); font-size: 20px; margin-bottom: 16px; }
+  .compare-col ul { list-style: none; display: grid; gap: 12px; }
+  .compare-col li { font-size: 15px; padding-left: 26px; position: relative; }
+  .compare-col.us li::before { content: "✓"; position: absolute; left: 0; color: var(--brass); font-weight: 700; }
+  .compare-col.agent li::before { content: "–"; position: absolute; left: 0; color: #9a938a; font-weight: 700; }
+
+  /* MEET PHIL */
+  .meet-grid { display: grid; grid-template-columns: 180px 1fr; gap: 32px; align-items: start; }
+  .photo-placeholder {
+    width: 180px; height: 180px; border-radius: 50%; border: 2px dashed var(--line);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    font-size: 12px; color: #6b6459; padding: 12px; background: var(--paper);
+  }
+  .meet-grid p { font-size: 15.5px; margin-bottom: 14px; }
+
+  /* WHY US */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+  .why-grid ul { list-style: none; display: grid; gap: 12px; }
+  .why-grid li { font-size: 15px; padding-left: 26px; position: relative; }
+  .why-grid li::before { content: "✓"; position: absolute; left: 0; color: var(--brass); font-weight: 700; }
+
+  /* PROOF */
   .proof-placeholder {
-    background: var(--paper);
-    border: 1px dashed var(--line);
-    border-radius: 3px;
-    padding: 32px;
-    text-align: center;
-    color: #8a8477;
-    font-size: 15px;
+    border: 2px dashed var(--line); border-radius: 8px; padding: 40px 24px; text-align: center;
+    font-size: 14px; color: #6b6459; background: var(--paper);
   }
 
-  /* FAQ */
-  .faq-item { border-bottom: 1px solid var(--line); padding: 18px 0; }
-  .faq-item:first-child { border-top: 1px solid var(--line); }
-  .faq-item h3 { font-family: var(--serif); font-size: 18px; color: var(--navy); margin-bottom: 8px; }
-  .faq-item p { font-size: 15.5px; }
+  /* FAQ ACCORDION */
+  .faq-list { display: grid; gap: 10px; max-width: 760px; margin: 12px auto 0; }
+  .faq-item { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; }
+  .faq-item summary {
+    font-family: var(--serif); font-size: 17px; color: var(--navy); padding: 16px 20px;
+    cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 20px; color: var(--brass); }
+  .faq-item[open] summary::after { content: "–"; }
+  .faq-item p { padding: 0 20px 18px; font-size: 15px; color: #3F5854; }
 
-  /* Form */
+  /* FORM */
   #get-offer { background: var(--navy); color: var(--paper); }
   #get-offer h2 { color: var(--paper); }
-  #get-offer .lead { color: #C9D2DC; }
-  .form-card {
-    background: var(--paper);
-    border-radius: 4px;
-    padding: 32px;
-    color: var(--charcoal);
-    margin-top: 8px;
-  }
+  #get-offer .section-sub { color: #C9D2DC; }
+  .form-card { background: var(--paper); border-radius: 6px; padding: 32px; color: var(--charcoal); margin-top: 8px; max-width: 760px; margin-left: auto; margin-right: auto; width: 100%; }
   fieldset { border: none; margin-bottom: 22px; }
-  legend {
-    font-family: var(--serif);
-    font-size: 17px;
-    color: var(--navy);
-    margin-bottom: 12px;
-    padding: 0;
-  }
+  legend { font-family: var(--serif); font-size: 17px; color: var(--navy); margin-bottom: 12px; padding: 0; }
   .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 14px; }
   label { display: block; font-size: 13.5px; color: var(--charcoal); margin-bottom: 5px; font-weight: 600; }
   input[type=text], input[type=tel], input[type=email], select, textarea {
-    width: 100%;
-    padding: 11px 12px;
-    border: 1px solid var(--line);
-    border-radius: 3px;
-    font-family: var(--sans);
-    font-size: 15px;
-    background: #fff;
-    color: var(--charcoal);
+    width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 3px;
+    font-family: var(--sans); font-size: 15px; background: #fff; color: var(--charcoal);
   }
   textarea { resize: vertical; min-height: 90px; }
-  .checkbox-group { display: flex; flex-wrap: wrap; gap: 10px 22px; }
-  .checkbox-group label { display: flex; align-items: center; gap: 7px; font-weight: 400; font-size: 15px; }
-  .checkbox-group input { width: auto; }
   .radio-group { display: flex; flex-wrap: wrap; gap: 10px 22px; }
   .radio-group label { display: flex; align-items: center; gap: 7px; font-weight: 400; font-size: 15px; }
   .radio-group input { width: auto; }
   .submit-row { display: flex; align-items: center; gap: 16px; margin-top: 6px; }
   #form-status { font-size: 14px; }
 
-  footer {
-    padding: 40px 0 60px;
-    border-top: 1px solid var(--line);
-    font-size: 14px;
-    color: #6b6459;
-  }
+  footer { padding: 40px 0 60px; border-top: 1px solid var(--line); font-size: 14px; color: #6b6459; }
   footer .wrap { display: grid; gap: 10px; }
   footer a { color: var(--navy); }
 
   @media (max-width: 720px) {
-    .steps, .avoid-list, .why-grid, .field-row, .meet-grid { grid-template-columns: 1fr; }
+    .steps, .diff-grid, .compare-grid, .meet-grid, .why-grid, .field-row { grid-template-columns: 1fr; }
     header { flex-direction: column; gap: 14px; text-align: center; }
     header nav { flex-direction: column; gap: 14px; }
+    .address-capture-row { flex-direction: column; }
+    .address-capture button { width: 100%; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="brand">
+  <a class="brand" href="index.html">
     <img src="sixpercentsaved-logo-primary-transparent.png" alt="Six Percent Saved" class="brand-logo">
-  </div>
+  </a>
   <nav>
     <a class="nav-link" href="not-living-there.html">Selling a house you don't live in</a>
     <a class="nav-link" href="home-prices.html">St. Louis home prices</a>
@@ -272,63 +228,50 @@
   </nav>
 </header>
 
-<section class="hero" style="border-top: none; padding-top: 8px;">
-  <div class="wrap" style="padding: 0;">
-    <div class="commission-badge">
-      <span class="commission-figure">6%</span>
-      <span class="commission-label">The commission you don't pay when you sell direct</span>
+<section class="hero" style="border-top: none;">
+  <div class="hero-photo">
+    <span>[ Photo placeholder — add a warm, welcoming shot here: a St. Louis home, a friendly handshake, or a neighborhood street. ]</span>
+  </div>
+  <div class="hero-content">
+    <h1>Ready to sell your house on your own terms?</h1>
+    <p class="lede">We buy houses directly in Chesterfield and greater St. Louis, MO — as-is, for cash, with no agent, no commission, no repairs, and no showings. Tell us the address and we'll take it from there.</p>
+
+    <div class="address-capture">
+      <label for="hero-address">Enter your property address</label>
+      <div class="address-capture-row">
+        <input type="text" id="hero-address" placeholder="123 Main St, Chesterfield, MO">
+        <button type="button" id="hero-address-btn">Get My Offer</button>
+      </div>
+      <p class="fine-print">Five minutes. No obligation. We'll follow up personally.</p>
     </div>
-    <h1>Skip the agent commission. Sell your house directly.</h1>
-    <p class="lede">We buy houses in Chesterfield and greater St. Louis, MO, as-is, for cash — no agent, no commission, no repairs, no showings. Tell us about the property, get a real offer, and close on a date that works for you — typically within 14 days once we're under contract.</p>
-    <div class="actions">
-      <a class="btn" href="#get-offer">Get my offer</a>
-      <a class="btn-secondary" href="tel:3143999898">Or call (314) 399-9898</a>
+
+    <div class="hero-badge-row">
+      <div class="hero-badge">
+        <span class="figure">6%</span>
+        <span class="label">The commission you don't pay when you sell direct</span>
+      </div>
+      <a class="call-secondary" href="tel:3143999898">Or call (314) 399-9898</a>
     </div>
   </div>
 </section>
 
-<section style="background: var(--paper);">
+<section style="border-top: none;">
   <div class="wrap">
     <h2>How it works</h2>
-    <p class="lead">Three steps, and you're talking to me the whole way — not a call center, not a rotating rep.</p>
+    <p class="section-sub">Three steps, and you're talking to me the whole way — not a call center, not a rotating rep.</p>
     <div class="steps">
       <div class="step">
-        <div class="step-icon">
-          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="32" r="30" fill="var(--paper)" stroke="var(--line)"/>
-            <circle cx="24" cy="26" r="8" fill="none" stroke="var(--navy)" stroke-width="3"/>
-            <path d="M12 46c2-8 8-12 12-12s10 4 12 12" fill="none" stroke="var(--navy)" stroke-width="3" stroke-linecap="round"/>
-            <path d="M40 20a9 9 0 0 1 10 10c0 5-4 7-4 11" fill="none" stroke="var(--brass-dark)" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="46" cy="46" r="2.2" fill="var(--brass-dark)"/>
-          </svg>
-        </div>
-        <div class="num">One</div>
+        <div class="step-num">1</div>
         <h3>Call or fill out the form</h3>
         <p>You'll reach me directly — Phil. A few minutes, no obligation.</p>
       </div>
       <div class="step">
-        <div class="step-icon">
-          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="32" r="30" fill="var(--paper)" stroke="var(--line)"/>
-            <path d="M14 40l8-16h20l8 16" fill="none" stroke="var(--navy)" stroke-width="3" stroke-linejoin="round"/>
-            <path d="M22 40v6h20v-6" fill="none" stroke="var(--navy)" stroke-width="3"/>
-            <path d="M22 30l5 5 9-9" fill="none" stroke="var(--green)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="num">Two</div>
+        <div class="step-num">2</div>
         <h3>I walk the property myself</h3>
         <p>I come see it in person and hand you a number — one that doesn't get renegotiated after inspection.</p>
       </div>
       <div class="step">
-        <div class="step-icon">
-          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="32" r="30" fill="var(--paper)" stroke="var(--line)"/>
-            <rect x="16" y="24" width="32" height="20" rx="2" fill="none" stroke="var(--navy)" stroke-width="3"/>
-            <path d="M20 30h14M20 36h10" stroke="var(--navy)" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M38 38l6 6M44 38l-6 6" stroke="var(--brass-dark)" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="num">Three</div>
+        <div class="step-num">3</div>
         <h3>I'm at the table when we close</h3>
         <p>Typically within 14 days of signing, or later if you need the time. You pick it — and I'll be there.</p>
       </div>
@@ -338,24 +281,69 @@
 
 <section>
   <div class="wrap">
-    <h2>What you avoid</h2>
-    <p class="lead">Selling directly means skipping the parts of a traditional sale that cost you money, time, or both.</p>
-    <div class="avoid-list">
-      <div class="avoid-item"><span class="mark">—</span> The commission a seller would typically pay an agent</div>
-      <div class="avoid-item"><span class="mark">—</span> Repairs, painting, or cleaning before you sell</div>
-      <div class="avoid-item"><span class="mark">—</span> Showings, open houses, and strangers walking through</div>
-      <div class="avoid-item"><span class="mark">—</span> Months of carrying an empty or unwanted house</div>
-      <div class="avoid-item"><span class="mark">—</span> A buyer's financing falling through late in the process</div>
-      <div class="avoid-item"><span class="mark">—</span> Staging costs and photography</div>
+    <h2>What makes us different</h2>
+    <p class="section-sub">No agent, no strangers walking through your home, no repair list — just a direct sale on your schedule.</p>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="glyph">%</div>
+        <h3>No agent commission</h3>
+        <p>You're selling directly to us, so there's no listing agent commission to pay.</p>
+      </div>
+      <div class="diff-card">
+        <div class="glyph">⚒</div>
+        <h3>No repairs needed</h3>
+        <p>Sell the house exactly as it sits today. We handle whatever it needs after closing.</p>
+      </div>
+      <div class="diff-card">
+        <div class="glyph">🔑</div>
+        <h3>No showings</h3>
+        <p>No strangers walking through, no open houses, no rescheduling your life around buyers.</p>
+      </div>
+      <div class="diff-card">
+        <div class="glyph">📅</div>
+        <h3>Close on your date</h3>
+        <p>Typically within 14 days of signing — or later, if that works better for you.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="background: var(--paper);">
+<section>
+  <div class="wrap">
+    <h2>Compare your options</h2>
+    <p class="section-sub">Here's how selling directly to us stacks up against a traditional listing.</p>
+    <div class="compare-grid">
+      <div class="compare-col us">
+        <h3>Sell with Six Percent Saved</h3>
+        <ul>
+          <li>No agent commission</li>
+          <li>We pay all closing costs</li>
+          <li>No repairs needed</li>
+          <li>No showings or open houses</li>
+          <li>Cash offer, typically within days</li>
+          <li>You pick the closing date</li>
+        </ul>
+      </div>
+      <div class="compare-col agent">
+        <h3>Sell with an agent</h3>
+        <ul>
+          <li>Commission a seller typically pays</li>
+          <li>Closing costs often out of your proceeds</li>
+          <li>Repairs usually expected before listing</li>
+          <li>Showings and open houses</li>
+          <li>Sale often subject to buyer financing</li>
+          <li>Closing timeline set by the buyer's lender</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <h2>Meet Phil</h2>
     <div class="meet-grid">
-      <div class="headshot-placeholder">Photo coming soon</div>
+      <div class="photo-placeholder">Photo coming soon</div>
       <div>
         <p>I'm Phil Castaneda, and Six Percent Saved is mine — not a franchise, not a call center. When you reach out, you're reaching me. I answer the phone, I come out for the walkthrough myself, I'm the one who hands you the offer, and I'm at the table on closing day. Same person, start to finish.</p>
         <p>I also own Cast Contracting, a general contracting company here in the St. Louis area. That's not a side note — it's why my numbers hold up. My own crew does the repair work, so I'm not guessing at what a house needs and padding my offer to cover the unknown. I know, because I'll be the one fixing it.</p>
@@ -365,58 +353,60 @@
 </section>
 
 <section>
-  <div class="wrap why-grid">
-    <div>
-      <h2>Why Six Percent Saved</h2>
-      <p>Six Percent Saved is owned by the same person who owns Cast Contracting, a general contracting company. That's not a marketing line — it changes how we buy.</p>
-      <p>We're not a middleman who calls a contractor after we own the house and finds out the real repair cost the hard way. Our own crew does the work, so our offer reflects the property's actual condition, not a padded guess. That's why our number doesn't move after inspection the way it can with buyers who don't control their own labor.</p>
-      <p>We're buying for our own account, as a principal — not acting as your real estate agent or broker.</p>
-    </div>
-    <div class="credential-box">
-      <h3>What that means for you</h3>
-      <ul>
-        <li>You deal with me, start to finish — not a rotating rep</li>
-        <li>A real, accurate offer the first time</li>
-        <li>No surprise renegotiation after we look closer</li>
-        <li>A local company, not a national call center</li>
-        <li>Serving Chesterfield and greater St. Louis, MO</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section style="background: var(--paper);">
   <div class="wrap">
-    <h2>See the work</h2>
-    <p class="lead">Before-and-after photos and seller stories go here as we complete more direct purchases.</p>
-    <div class="proof-placeholder">
-      Coming soon — real before/after photos and seller stories.
+    <h2>Why Six Percent Saved</h2>
+    <div class="why-grid">
+      <div>
+        <p>Six Percent Saved is owned by the same person who owns Cast Contracting, a general contracting company. That's not a marketing line — it changes how we buy.</p>
+        <p>We're not a middleman who calls a contractor after we own the house and finds out the real repair cost the hard way. Our own crew does the work, so our offer reflects the property's actual condition, not a padded guess. That's why our number doesn't move after inspection the way it can with buyers who don't control their own labor.</p>
+        <p style="font-size: 13px; color: #6b6459;">We're buying for our own account, as a principal — not acting as your real estate agent or broker.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--serif); font-size: 17px; color: var(--navy); margin-bottom: 12px;">What that means for you</h3>
+        <ul>
+          <li>You deal with me, start to finish — not a rotating rep</li>
+          <li>A real, accurate offer the first time</li>
+          <li>No surprise renegotiation after we look closer</li>
+          <li>A local company, not a national call center</li>
+          <li>Serving Chesterfield and greater St. Louis, MO</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
+    <h2>See the work</h2>
+    <p class="section-sub">Before-and-after photos and real seller stories are coming as we complete projects — we don't fabricate these, so this section stays honest until we have them.</p>
+    <div class="proof-placeholder">Before/after photos and seller stories — coming soon</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2>Honest answers</h2>
-    <div class="faq-item">
-      <h3>Will I get less than a Zillow estimate or listing price?</h3>
-      <p>Usually, yes — our offer reflects the property's condition, the speed, and the certainty of a cash sale, not full retail. If getting the highest possible price matters more to you than speed and certainty, listing with an agent may be the better move, and we'll tell you that honestly.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Do I need to clean out the house first?</h3>
-      <p>No. Leave what you don't want. We handle it.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What if I change my mind after I say yes?</h3>
-      <p>You can back out before closing with no penalty, up until the date we agree on in writing. We'd rather you feel sure than feel pressured.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are you my real estate agent?</h3>
-      <p>No. We're a local buyer purchasing the property directly for our own account, not a licensed broker or agent representing you.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Who pays closing costs?</h3>
-      <p>We do — all of them, every time. It's part of the offer, not something you pay out of your proceeds.</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Will I get less than a Zillow estimate or listing price?</summary>
+        <p>Usually, yes — our offer reflects the property's condition, the speed, and the certainty of a cash sale, not full retail. If getting the highest possible price matters more to you than speed and certainty, listing with an agent may be the better move, and we'll tell you that honestly.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to clean out the house first?</summary>
+        <p>No. Leave what you don't want. We handle it.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I change my mind after I say yes?</summary>
+        <p>You can back out before closing with no penalty, up until the date we agree on in writing. We'd rather you feel sure than feel pressured.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are you my real estate agent?</summary>
+        <p>No. We're a local buyer purchasing the property directly for our own account, not a licensed broker or agent representing you.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Who pays closing costs?</summary>
+        <p>We do — all of them, every time. It's part of the offer, not something you pay out of your proceeds.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -424,7 +414,7 @@
 <section id="get-offer">
   <div class="wrap">
     <h2>Tell us about the property</h2>
-    <p class="lead">Five minutes. No obligation. We'll follow up personally, not with a robocall.</p>
+    <p class="section-sub">Five minutes. No obligation. We'll follow up personally, not with a robocall.</p>
 
     <form class="form-card" id="offer-form">
       <fieldset>
@@ -440,7 +430,7 @@
           </div>
         </div>
         <label>Condition</label>
-        <div class="checkbox-group" style="margin-bottom: 14px;">
+        <div class="radio-group" style="margin-bottom: 14px;">
           <label><input type="radio" name="condition" value="Move-in ready"> Move-in ready</label>
           <label><input type="radio" name="condition" value="Needs cosmetic work"> Needs cosmetic work</label>
           <label><input type="radio" name="condition" value="Needs major repairs"> Needs major repairs</label>
@@ -505,8 +495,12 @@
 </footer>
 
 <script>
-  // NOTE FOR PHIL: replace GOOGLE_SCRIPT_URL below with the Web App URL
-  // from your Google Apps Script deployment (instructions provided separately).
+  document.getElementById('hero-address-btn').addEventListener('click', function () {
+    const val = document.getElementById('hero-address').value;
+    if (val) document.getElementById('address').value = val;
+    document.getElementById('get-offer').scrollIntoView({ behavior: 'smooth' });
+  });
+
   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxMJVdM71RiIY2UbuZXwmVNS1PEoO8pIQqDIT8QU700Sgh8ONG-E7mPpXa-jC2ke-k/exec";
 
   const form = document.getElementById('offer-form');
@@ -517,6 +511,7 @@
     status.textContent = 'Sending…';
 
     const data = Object.fromEntries(new FormData(form).entries());
+    data.source_page = "homepage";
 
     fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',

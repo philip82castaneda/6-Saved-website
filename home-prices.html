@@ -168,7 +168,7 @@
 <section>
   <div class="wrap">
     <h2>Click an area to see what 6% costs there</h2>
-    <p class="lead">A real, interactive map of the metro area — pan, zoom, and click any pin. Recent median sale prices reported by Redfin.</p>
+    <p class="lead">A real, interactive map of the metro area — pan, zoom, and click any pin, or click anywhere else on the map to see the numbers for the closest area we track. Recent median sale prices reported by Redfin, Zillow, and Movoto.</p>
 
     <div class="map-interactive">
       <div class="map-leaflet-wrap">
@@ -176,7 +176,7 @@
       </div>
 
       <div class="stats-panel" id="stats-panel">
-        <p class="prompt" id="stats-prompt">Click a pin on the map to see its numbers.</p>
+        <p class="prompt" id="stats-prompt">Click a pin — or anywhere on the map — to see its numbers.</p>
         <div id="stats-content" style="display: none;">
           <h3 id="stats-area-name"></h3>
           <div class="stat-row"><span>Median sale price</span><span class="stat-value" id="stats-price"></span></div>
@@ -188,7 +188,7 @@
     </div>
 
     <div class="note-box">
-      These figures are approximate medians reported by Redfin for recent 2025–2026 periods, and they move month to month — small suburbs especially can swing based on a handful of sales. Commission rates are also negotiable and vary by agent; 6% is a commonly cited figure, not a fixed or mandatory rate. The math here is meant to be illustrative of what's at stake, not a quote for your specific property. When you sell directly to us, this is the kind of money you don't hand over in commission — we'll go over your specific numbers when we present your offer.
+      These figures are approximate medians reported by Redfin, Zillow, or Movoto for recent 2025–2026 periods, and they move month to month — small suburbs especially can swing based on a handful of sales (flagged where the swings are large). Commission rates are also negotiable and vary by agent; 6% is a commonly cited figure, not a fixed or mandatory rate. Clicking a spot on the map with no pin shows the numbers for the closest area we track, not a price specific to that exact location — no source publishes home price data for arbitrary points on a map. The math here is meant to be illustrative of what's at stake, not a quote for your specific property. When you sell directly to us, this is the kind of money you don't hand over in commission — we'll go over your specific numbers when we present your offer.
     </div>
   </div>
 </section>
@@ -297,20 +297,57 @@
     overland: { name: "Overland", price: "~$163,000", commission: "~$9,800", source: "Redfin, 2026 — small sample, volatile", coords: [38.7042, -90.3673] },
     marylandheights: { name: "Maryland Heights", price: "~$280,000", commission: "~$16,800", source: "Redfin, August 2025", coords: [38.7112, -90.4432] },
     lemay: { name: "Lemay", price: "~$166,750", commission: "~$10,000", source: "Redfin, February 2026", coords: [38.5306, -90.2831] },
-    mehlville: { name: "Mehlville", price: "~$261,900", commission: "~$15,700", source: "Redfin, June 2026", coords: [38.4767, -90.3395] }
+    mehlville: { name: "Mehlville", price: "~$261,900", commission: "~$15,700", source: "Redfin, June 2026", coords: [38.4767, -90.3395] },
+
+    // --- Added: expanded coverage (31 more areas) ---
+    clayton: { name: "Clayton", price: "~$681,000", commission: "~$40,900", source: "Redfin, November 2025", coords: [38.64444, -90.33028] },
+    universitycity: { name: "University City", price: "~$262,583", commission: "~$15,800", source: "Zillow, December 2025", coords: [38.66583, -90.33167] },
+    stcharles: { name: "St. Charles", price: "~$350,809", commission: "~$21,000", source: "Redfin, 3-month period ending June 2026", coords: [38.789, -90.514] },
+    wentzville: { name: "Wentzville", price: "~$394,785", commission: "~$23,700", source: "Redfin, 3-month period ending June 2026", coords: [38.81611, -90.85722] },
+    belleville: { name: "Belleville, IL", price: "~$155,422", commission: "~$9,300", source: "Redfin, 3-month period ending July 2026", coords: [38.50722, -89.98972] },
+    affton: { name: "Affton", price: "~$268,854", commission: "~$16,100", source: "Redfin, 3-month period ending June 2026", coords: [38.55000, -90.32639] },
+    richmondheights: { name: "Richmond Heights", price: "~$484,500", commission: "~$29,100", source: "Movoto, August 2026", coords: [38.62833, -90.32861] },
+    brentwood: { name: "Brentwood", price: "~$180,000", commission: "~$10,800", source: "Movoto, August 2026", coords: [38.61944, -90.34750] },
+    olivette: { name: "Olivette", price: "~$725,000", commission: "~$43,500", source: "Redfin, 3-month period ending July 2026", coords: [38.67250, -90.37861] },
+    normandy: { name: "Normandy", price: "~$102,449", commission: "~$6,100", source: "Redfin, 3-month period ending July 2026 — small sample, volatile", coords: [38.70722, -90.30083] },
+    frontenac: { name: "Frontenac", price: "~$2,373,708", commission: "~$142,400", source: "Redfin, 3-month period ending June 2026 — small sample, highly volatile (+97% YoY)", coords: [38.63000, -90.41889] },
+    desperes: { name: "Des Peres", price: "~$815,000", commission: "~$48,900", source: "Redfin, October 2025", coords: [38.59750, -90.44806] },
+    towncountry: { name: "Town and Country", price: "~$1,174,412", commission: "~$70,500", source: "Redfin, 3-month period ending July 2026", coords: [38.63167, -90.47917] },
+    manchester: { name: "Manchester", price: "~$385,907", commission: "~$23,200", source: "Redfin, 3-month period ending July 2026", coords: [38.58306, -90.50639] },
+    ellisville: { name: "Ellisville", price: "~$399,900", commission: "~$24,000", source: "Redfin, November 2025", coords: [38.58972, -90.58833] },
+    wildwood: { name: "Wildwood", price: "~$594,676", commission: "~$35,700", source: "Redfin, 3-month period ending June 2026", coords: [38.58000, -90.66972] },
+    valleypark: { name: "Valley Park", price: "~$284,845", commission: "~$17,100", source: "Redfin, 3-month period ending June 2026", coords: [38.54944, -90.49722] },
+    sunsethills: { name: "Sunset Hills", price: "~$728,685", commission: "~$43,700", source: "Redfin, 3-month period ending July 2026", coords: [38.53111, -90.40861] },
+    crestwood: { name: "Crestwood", price: "~$365,000", commission: "~$21,900", source: "Redfin, 3-month period ending July 2026", coords: [38.55694, -90.37833] },
+    oakville: { name: "Oakville", price: "~$379,810", commission: "~$22,800", source: "Redfin, 3-month period ending July 2026", coords: [38.44778, -90.32000] },
+    shrewsbury: { name: "Shrewsbury", price: "~$264,867", commission: "~$15,900", source: "Redfin, 3-month period ending July 2026", coords: [38.58667, -90.32806] },
+    glendale: { name: "Glendale", price: "~$392,500", commission: "~$23,600", source: "Redfin, June 2025", coords: [38.59361, -90.38250] },
+    hazelwood: { name: "Hazelwood", price: "~$169,900", commission: "~$10,200", source: "Movoto, August 2026", coords: [38.77944, -90.35639] },
+    berkeley: { name: "Berkeley", price: "~$125,000", commission: "~$7,500", source: "Redfin, October 2025", coords: [38.74389, -90.33611] },
+    stpeters: { name: "St. Peters", price: "~$344,900", commission: "~$20,700", source: "Movoto, August 2026", coords: [38.77889, -90.60306] },
+    lakestlouis: { name: "Lake St. Louis", price: "~$400,782", commission: "~$24,000", source: "Redfin, 3-month period ending June 2026", coords: [38.78667, -90.78000] },
+    arnold: { name: "Arnold", price: "~$324,837", commission: "~$19,500", source: "Redfin, 3-month period ending July 2026", coords: [38.42972, -90.37333] },
+    fairviewheights: { name: "Fairview Heights, IL", price: "~$339,900", commission: "~$20,400", source: "Movoto, June 2026", coords: [38.60833, -89.98778] },
+    edwardsville: { name: "Edwardsville, IL", price: "~$344,078", commission: "~$20,600", source: "Redfin, 3-month period ending July 2026", coords: [38.78778, -90.02111] },
+    ofallonil: { name: "O'Fallon, IL", price: "~$374,479", commission: "~$22,500", source: "Redfin, 3-month period ending July 2026", coords: [38.59750, -89.91028] },
+    collinsville: { name: "Collinsville, IL", price: "~$215,000", commission: "~$12,900", source: "Movoto, June 2026", coords: [38.67833, -89.99528] }
   };
 
   const markerRefs = {};
 
-  function selectArea(id) {
+  function selectArea(id, distanceMiles) {
     const data = areaStats[id];
     if (!data) return;
     document.getElementById('stats-prompt').style.display = 'none';
     document.getElementById('stats-content').style.display = 'block';
-    document.getElementById('stats-area-name').textContent = data.name;
+    document.getElementById('stats-area-name').textContent =
+      (typeof distanceMiles === 'number' ? 'Closest area: ' : '') + data.name;
     document.getElementById('stats-price').textContent = data.price;
     document.getElementById('stats-commission').textContent = data.commission;
-    document.getElementById('stats-source').textContent = data.source;
+    document.getElementById('stats-source').textContent = data.source +
+      (typeof distanceMiles === 'number' && distanceMiles > 1
+        ? ' · about ' + distanceMiles.toFixed(1) + ' mi from where you clicked'
+        : '');
     Object.keys(markerRefs).forEach(function (key) {
       markerRefs[key].setStyle(key === id
         ? { fillColor: '#164A43', color: '#4C9A6E', weight: 3, radius: 11 }
@@ -318,7 +355,7 @@
     });
   }
 
-  const priceMap = L.map('price-map').setView([38.66, -90.43], 10);
+  const priceMap = L.map('price-map').setView([38.68, -90.45], 9);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 18
@@ -330,8 +367,38 @@
       radius: 9, fillColor: '#4C9A6E', color: '#164A43', weight: 2, fillOpacity: 1
     }).addTo(priceMap);
     marker.bindTooltip(data.name, { direction: 'top', offset: [0, -8] });
-    marker.on('click', function () { selectArea(id); });
+    marker.on('click', function (e) {
+      L.DomEvent.stopPropagation(e);
+      selectArea(id);
+    });
     markerRefs[id] = marker;
+  });
+
+  // Click anywhere on the map (not just a pin): snap to whichever tracked
+  // area is geographically closest, using real distance over lat/lng so it
+  // stays accurate at any zoom or pan position. We never estimate or
+  // interpolate a price for the exact clicked spot -- no source publishes
+  // point-level home price data, and inventing one isn't something this
+  // business does. The stats panel always labels this as the closest
+  // tracked area, never as data for the exact spot clicked.
+  function milesBetween(lat1, lon1, lat2, lon2) {
+    const R = 3958.8;
+    const toRad = Math.PI / 180;
+    const dLat = (lat2 - lat1) * toRad;
+    const dLon = (lon2 - lon1) * toRad;
+    const a = Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat1 * toRad) * Math.cos(lat2 * toRad) * Math.sin(dLon / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(a));
+  }
+
+  priceMap.on('click', function (e) {
+    let bestId = null, bestDist = Infinity;
+    Object.keys(areaStats).forEach(function (id) {
+      const c = areaStats[id].coords;
+      const d = milesBetween(e.latlng.lat, e.latlng.lng, c[0], c[1]);
+      if (d < bestDist) { bestDist = d; bestId = id; }
+    });
+    if (bestId) selectArea(bestId, bestDist);
   });
 </script>
 

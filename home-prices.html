@@ -50,11 +50,12 @@
   .header-actions .call {
     font-family: var(--serif); font-size: 16px; color: var(--navy); text-decoration: none;
     border-bottom: 2px solid var(--brass); padding-bottom: 2px; white-space: nowrap;
+    display: inline-flex; align-items: center; min-height: 44px;
   }
   .menu-toggle {
     display: flex; flex-direction: column; justify-content: center; gap: 5px;
-    width: 40px; height: 36px; background: none; border: 1px solid var(--line); border-radius: 4px;
-    cursor: pointer; padding: 0; align-items: center;
+    width: 44px; height: 44px; background: none; border: 1px solid var(--line); border-radius: 4px;
+    cursor: pointer; padding: 0; align-items: center; flex-shrink: 0;
   }
   .menu-toggle span { display: block; width: 20px; height: 2px; background: var(--navy); }
   .site-nav {
@@ -77,7 +78,7 @@
   .sticky-offer-inner { display: flex; gap: 10px; padding: 12px 24px; flex-wrap: wrap; }
   .sticky-offer-inner input[type=text] {
     flex: 1 1 240px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 4px;
-    font-family: var(--sans); font-size: 15px; color: var(--charcoal);
+    font-family: var(--sans); font-size: 16px; color: var(--charcoal);
   }
   .btn-green {
     background: var(--brass); color: var(--paper); font-family: var(--sans); font-weight: 700;
@@ -164,7 +165,7 @@
   label { display: block; font-size: 13.5px; color: var(--charcoal); margin-bottom: 5px; font-weight: 600; }
   input[type=text], input[type=tel], input[type=email], select, textarea {
     width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 3px;
-    font-family: var(--sans); font-size: 15px; background: #fff; color: var(--charcoal);
+    font-family: var(--sans); font-size: 16px; background: #fff; color: var(--charcoal);
   }
   textarea { resize: vertical; min-height: 90px; }
   .radio-group { display: flex; flex-wrap: wrap; gap: 10px 22px; }
@@ -202,6 +203,7 @@
   @media (max-width: 720px) {
     .map-interactive, .field-row { grid-template-columns: 1fr; }
     .sticky-offer-inner { flex-direction: column; }
+    .sticky-offer-inner input[type=text] { flex: 1 1 auto; }
   }
 </style>
 </head>

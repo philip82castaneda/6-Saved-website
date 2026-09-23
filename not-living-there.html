@@ -147,10 +147,9 @@
 
   /* MEET PHIL */
   .meet-grid { display: grid; grid-template-columns: 200px 1fr; gap: 36px; align-items: start; }
-  .photo-placeholder {
-    width: 200px; height: 200px; border-radius: 50%; border: 2px dashed var(--line);
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    font-size: 12px; color: #6b6459; padding: 12px; background: var(--paper);
+  .phil-photo {
+    width: 200px; height: 200px; border-radius: 50%; border: 2px solid var(--line);
+    display: block; object-fit: cover; background: var(--paper);
   }
   .meet-grid p { font-size: 15.5px; margin-bottom: 14px; }
 
@@ -322,7 +321,7 @@
     <h2>Meet Phil</h2>
     <div class="meet-grid" style="margin-top: 20px;">
       <div>
-        <div class="photo-placeholder">Photo coming soon</div>
+        <img src="phil-headshot.jpg" alt="Phil Castaneda, owner of Six Percent Saved" class="phil-photo">
       </div>
       <div>
         <p>I'm Phil Castaneda. When you're handling a house from out of town — or from across the same city while juggling everything else — the last thing you need is another stranger to coordinate with. So you won't have to. I answer the phone myself, I do the walkthrough in person, I'm the one who hands you the offer, and I'm at the table when we close, no matter where you're calling in from.</p>

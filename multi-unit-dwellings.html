@@ -163,10 +163,9 @@
 
   /* MEET PHIL */
   .meet-grid { display: grid; grid-template-columns: 200px 1fr; gap: 36px; align-items: start; }
-  .photo-placeholder {
-    width: 200px; height: 200px; border-radius: 50%; border: 2px dashed var(--line);
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    font-size: 12px; color: #6b6459; padding: 12px; background: var(--paper);
+  .phil-photo {
+    width: 200px; height: 200px; border-radius: 50%; border: 2px solid var(--line);
+    display: block; object-fit: cover; background: var(--paper);
   }
   .meet-grid p { font-size: 15.5px; margin-bottom: 14px; }
 
@@ -381,7 +380,7 @@
     <h2>Meet Phil</h2>
     <div class="meet-grid" style="margin-top: 20px;">
       <div>
-        <div class="photo-placeholder">Photo coming soon</div>
+        <img src="phil-headshot.jpg" alt="Phil Castaneda, owner of Six Percent Saved" class="phil-photo">
       </div>
       <div>
         <p>I'm Phil Castaneda. I buy multi-unit properties directly, in whatever condition and occupancy status they're in, so owners don't have to prep, repair, or market a building before they can move on from it. I do the walkthrough myself, I hand you the offer, and I'm at the table when we close.</p>

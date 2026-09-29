@@ -208,6 +208,7 @@
   .meet-grid p { font-size: 15.5px; margin-bottom: 14px; }
   .meet-name { font-family: var(--serif); font-size: 22px; color: var(--navy); margin-bottom: 2px; }
   .meet-title { font-family: var(--sans); font-size: 14px; color: var(--brass-dark); font-weight: 700; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .band-photo { width: 100%; height: 320px; object-fit: cover; border-radius: 8px; display: block; margin-top: 8px; }
 
   /* WHY US */
   .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
@@ -299,6 +300,7 @@
 
   @media (max-width: 720px) {
     .steps, .diff-grid, .tile-grid, .compare-grid, .meet-grid, .why-grid, .field-row { grid-template-columns: 1fr; }
+    .band-photo { height: 220px; }
     .address-capture-row { flex-direction: column; }
     .address-capture-row input[type=text] { flex: 1 1 auto; }
     .address-capture button, .address-capture a.btn-green { width: 100%; }
@@ -358,6 +360,12 @@
         <p>I work here in STL and I only buy in the St. Louis metro area. My community. Nowhere else.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <img src="about-photo.jpg" alt="Phil Castaneda talking with a homeowner during a walkthrough" class="band-photo" style="object-position: 50% 15%;">
   </div>
 </section>
 

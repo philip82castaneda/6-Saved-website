@@ -102,14 +102,11 @@
   }
   .hero-photo {
     width: 100%; min-height: 280px; max-height: 420px;
-    background: repeating-linear-gradient(135deg, #143d38, #143d38 12px, #0F332E 12px, #0F332E 24px);
-    border-bottom: 3px dashed rgba(255,255,255,0.25);
-    display: flex; align-items: center; justify-content: center;
-    text-align: center; padding: 24px;
+    overflow: hidden; border-bottom: 3px solid rgba(255,255,255,0.15);
   }
-  .hero-photo span {
-    font-family: var(--sans); font-size: 14px; color: rgba(255,255,255,0.65);
-    max-width: 32ch; line-height: 1.5;
+  .hero-photo-img {
+    width: 100%; height: 100%; min-height: 280px; max-height: 420px;
+    object-fit: cover; object-position: 35% 8%; display: block;
   }
   .hero-content { max-width: 1080px; margin: 0 auto; padding: 44px 24px 56px; }
   .hero-kicker {
@@ -146,6 +143,8 @@
   .hero-badge .figure { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--brass); line-height: 1; }
   .hero-badge .label { font-size: 13px; color: #CFE4DC; max-width: 22ch; line-height: 1.3; }
   .hero .call-secondary { color: #CFE4DC; font-family: var(--serif); font-size: 16px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 2px; }
+
+  .band-photo { width: 100%; height: 320px; object-fit: cover; border-radius: 8px; display: block; margin-top: 8px; }
 
   /* SHARED SECTION */
   section { padding: 60px 0; border-top: 1px solid var(--line); }
@@ -300,6 +299,7 @@
 
   @media (max-width: 720px) {
     .steps, .diff-grid, .tile-grid, .compare-grid, .meet-grid, .why-grid, .field-row { grid-template-columns: 1fr; }
+    .band-photo { height: 220px; }
     .address-capture-row { flex-direction: column; }
     .address-capture-row input[type=text] { flex: 1 1 auto; }
     .address-capture button, .address-capture a.btn-green { width: 100%; }
@@ -345,7 +345,7 @@
 
 <section class="hero" style="border-top: none;">
   <div class="hero-photo">
-    <span>[ Photo placeholder — add a warm, welcoming shot here: a St. Louis home, a friendly handshake, or a neighborhood street. ]</span>
+    <img src="hero-banner.jpg" alt="Phil Castaneda meeting with homeowners on their front porch in St. Louis" class="hero-photo-img">
   </div>
   <div class="hero-content">
     <div class="hero-kicker">Serving the St. Louis Metro area</div>
@@ -478,6 +478,7 @@
 <section class="navy-band on-navy">
   <div class="wrap">
     <h2>Why the numbers hold up</h2>
+    <img src="story-phil.jpg" alt="Phil Castaneda explaining the offer process" class="band-photo" style="max-width: 480px; height: 360px; object-position: 68% 15%; margin: 20px auto;">
     <p class="section-sub" style="max-width: 68ch;">Six Percent Saved is owned by me, Phil. I've spent my career in the trades right here in STL. My offer is based on how the real estate market is performing and my experience in repairing St. Louis homes. After closing, it's my crew who prepares the house for resale. So our offer reflects the property's actual condition — not a padded guess that gets renegotiated after inspection. That's the difference between a real number and an opening bid</p>
     <div class="btn-center">
       <a class="btn-green" href="about.html">Read more about Phil &amp; Cast Contracting</a>

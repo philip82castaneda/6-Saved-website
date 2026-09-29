@@ -152,6 +152,7 @@
     display: block; object-fit: cover; background: var(--paper);
   }
   .meet-grid p { font-size: 15.5px; margin-bottom: 14px; }
+  .band-photo { width: 100%; height: 320px; object-fit: cover; border-radius: 8px; display: block; margin-top: 8px; }
 
   /* FORM */
   #get-offer.on-navy, section.on-navy#get-offer { background: var(--navy); color: var(--paper); }
@@ -205,6 +206,7 @@
 
   @media (max-width: 720px) {
     .situations, .field-row, .meet-grid { grid-template-columns: 1fr; }
+    .band-photo { height: 220px; }
     .sticky-offer-inner { flex-direction: column; }
     .sticky-offer-inner input[type=text] { flex: 1 1 auto; }
     .meet-grid { justify-items: center; text-align: center; }
@@ -328,6 +330,12 @@
         <p>I also own Cast Contracting, a general contracting company here in the St. Louis area. My own crew does whatever work the house needs after closing, which is why I don't need to pad my number for unknowns the way a buyer without a crew does.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <img src="notliving-photo.jpg" alt="Phil Castaneda talking with a homeowner in her kitchen" class="band-photo" style="object-position: 50% 20%;">
   </div>
 </section>
 

@@ -44,7 +44,8 @@
     padding: 16px 24px;
   }
   .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .brand-logo { height: 40px; width: auto; display: block; }
+  .brand { flex-shrink: 0; }
+  .brand-logo { height: 40px; width: auto; display: block; flex-shrink: 0; }
   .header-actions { display: flex; align-items: center; gap: 18px; }
   .header-actions .call {
     font-family: var(--serif); font-size: 16px; color: var(--navy); text-decoration: none;
@@ -310,6 +311,11 @@
     .header-inner { flex-wrap: wrap; row-gap: 12px; }
   }
 
+  @media (max-width: 640px) {
+    .header-actions .btn.btn-sm { display: none; }
+    .sticky-offer-bar { display: none; }
+  }
+
   @media (max-width: 900px) {
     .steps, .diff-grid, .tile-grid { grid-template-columns: repeat(2, 1fr); }
   }
@@ -344,7 +350,7 @@
       <a href="contact.html">Contact Us</a>
     </nav>
     <div class="header-actions">
-      <a class="call" href="tel:3143999898">(314) 399-9898</a>
+      <a class="call" href="tel:3145300757">(314) 530-0757</a>
       <a class="btn btn-sm" href="contact.html">Get My Offer</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -391,7 +397,7 @@
         <span class="figure" style="font-size:18px;">Local</span>
         <span class="label">Owned &amp; operated right here in STL — not a call center</span>
       </div>
-      <a class="call-secondary" href="tel:3143999898">Or call (314) 399-9898</a>
+      <a class="call-secondary" href="tel:3145300757">Or call (314) 530-0757</a>
     </div>
   </div>
 </section>
@@ -407,7 +413,7 @@
           <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <h3>Reach Out</h3>
-        <p>Call (314) 399-9898 or fill out the form — you'll reach me directly, Phil, not a call center.</p>
+        <p>Call (314) 530-0757 or fill out the form — you'll reach me directly, Phil, not a call center.</p>
       </div>
       <div class="step-card">
         <div class="step-icon">
@@ -591,7 +597,7 @@
     <span class="footer-wordmark">Six Percent Saved</span>
   </div>
   <div class="wrap footer-legal">
-    <p>© 2026 Six Percent Saved · Chesterfield &amp; Greater St. Louis, MO · <a href="tel:3143999898">(314) 399-9898</a></p>
+    <p>© 2026 Six Percent Saved · Chesterfield &amp; Greater St. Louis, MO · <a href="tel:3145300757">(314) 530-0757</a></p>
     <p>Six Percent Saved buys residential property directly, for its own account, as a principal. We are not a licensed real estate brokerage and do not represent sellers as their agent.</p>
   </div>
 </footer>
